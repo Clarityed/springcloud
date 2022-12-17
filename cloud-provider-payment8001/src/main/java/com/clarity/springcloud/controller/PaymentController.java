@@ -51,7 +51,7 @@ public class PaymentController {
         if (result != null) {
             return new CommonResult(200,"查询数据成功", result);
         } else {
-            return new CommonResult(500, "插入数据失败，查询 id：" + id, null);
+            return new CommonResult(500, "查询数据失败，查询 id：" + id, null);
         }
     }
 }
