@@ -80,4 +80,10 @@ public class PaymentController {
         }
         return this.discoveryClient;
     }
+
+    @GetMapping(value = "/lb")
+    public String getPaymentLB()
+    {
+        return "当前请求的微服务端口号：" + serverPort;
+    }
 }

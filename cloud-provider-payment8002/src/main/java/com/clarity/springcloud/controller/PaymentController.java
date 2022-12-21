@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.*;
 import javax.annotation.Resource;
 
 /**
- * 功能描述
+ * 支付模块控制层
  *
- * @author: scott
+ * @author: clarity
  * @date: 2022年12月16日 16:19
  */
 
@@ -57,5 +57,11 @@ public class PaymentController {
         } else {
             return new CommonResult(500, "查询数据失败，查询 id：" + id, null);
         }
+    }
+
+    @GetMapping(value = "/lb")
+    public String getPaymentLB()
+    {
+        return "当前请求的微服务端口号：" + serverPort;
     }
 }
