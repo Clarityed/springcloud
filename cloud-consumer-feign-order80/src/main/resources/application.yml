@@ -1,0 +1,9 @@
+server:
+  port: 80
+
+# 消费者可以不注册到微服务中心里
+eureka:
+  client:
+    register-with-eureka: false
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/, http://eureka7002.com:7002/eureka/

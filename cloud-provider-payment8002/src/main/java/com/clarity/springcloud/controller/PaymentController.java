@@ -29,7 +29,7 @@ public class PaymentController {
 
     @PostMapping(value = "/create")
     // 先不加 @RequestBody 方便下面的测试
-    public CommonResult<Payment> createPayment(@RequestBody Payment payment) {
+    public CommonResult<Integer> createPayment(@RequestBody Payment payment) {
         if (payment == null) {
             return new CommonResult(500, "插入记录不能为空", null);
         }
