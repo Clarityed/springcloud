@@ -38,4 +38,10 @@ public class OrderFeignController {
         }
         return paymentFeignService.createPayment(payment);
     }
+
+    @GetMapping(value = "/payment/feign/timeout")
+    public String getPaymentFeignTimeout() {
+        // Feign 默认等待提供者调用返回结果，默认是 1 s
+        return paymentFeignService.getPaymentFeignTimeout();
+    }
 }

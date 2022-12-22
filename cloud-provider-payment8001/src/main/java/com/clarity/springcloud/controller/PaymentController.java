@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 /**
  * 支付模块控制层
@@ -85,5 +86,16 @@ public class PaymentController {
     public String getPaymentLB()
     {
         return "当前请求的微服务端口号：" + serverPort;
+    }
+
+    @GetMapping(value = "/feign/timeout")
+    public String getPaymentFeignTimeout() {
+        // 模拟复杂业务的处理时间
+        try {
+            TimeUnit.SECONDS.sleep(3);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return serverPort;
     }
 }

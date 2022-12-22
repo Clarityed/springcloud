@@ -23,4 +23,7 @@ public interface PaymentFeignService {
 
     @GetMapping(value = "/lb")
     String getPaymentLB();
+
+    @GetMapping(value = "/feign/timeout")
+    String getPaymentFeignTimeout();
 }
