@@ -11,13 +11,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 
 @Component
-@FeignClient("CLOUD-PROVIDER-HYSTRIX-PAYMENT")
-@RequestMapping("/payment")
+@FeignClient(value = "CLOUD-PROVIDER-HYSTRIX-PAYMENT", fallback = PaymentFallbackService.class)
+// @RequestMapping("/payment")
 public interface PaymentHystrixService {
 
-    @GetMapping("/hystrix/ok/{id}")
+    @GetMapping("/payment/hystrix/ok/{id}")
     String paymentInfo_OK(@PathVariable("id") Integer id);
 
-    @GetMapping("/hystrix/timeout/{id}")
+    @GetMapping("/payment/hystrix/timeout/{id}")
     String paymentInfo_Timeout(@PathVariable("id") Integer id);
 }
