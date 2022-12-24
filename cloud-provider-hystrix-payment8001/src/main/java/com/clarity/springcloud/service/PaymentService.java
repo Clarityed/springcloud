@@ -15,4 +15,11 @@ public interface PaymentService {
      * @return 测试信息
      */
     String paymentInfo_Timeout(Integer id);
+
+    /**
+     * 超时访问，降级方法
+     * @param id 任意整型数据
+     * @return 测试信息
+     */
+    String paymentInfo_TimeOutHandler(Integer id);
 }
