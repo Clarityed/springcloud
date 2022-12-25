@@ -22,4 +22,18 @@ public interface PaymentService {
      * @return 测试信息
      */
     String paymentInfo_TimeOutHandler(Integer id);
+
+    /**
+     * 服务熔断
+     * @param id 任意整型数据
+     * @return 测试信息
+     */
+    String paymentCircuitBreaker(Integer id);
+
+    /**
+     * 服务熔断，降级方法
+     * @param id 任意整型数据
+     * @return 测试信息
+     */
+    String paymentCircuitBreaker_fallback(Integer id);
 }
