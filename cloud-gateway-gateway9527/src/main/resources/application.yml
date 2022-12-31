@@ -17,9 +17,9 @@ spring:
             - Path=/payment/get/**         # 断言，路径相匹配的进行路由
             - After=2022-12-30T20:07:48.734+08:00[Asia/Shanghai] # 断言，路径相匹配的进行路由
             # - Cookie=clarity, zhengweizhan
-            - Host=**.clarity.com
-            - Method=GET
-            - Query=clarity, \d+
+            # - Host=**.clarity.com
+            # - Method=GET
+            # - Query=clarity, \d+
 
         - id: payment_routh2 #payment_route    #路由的ID，没有固定规则但要求唯一，建议配合服务名
           # uri: http://localhost:8001          #匹配后提供服务的路由地址
@@ -27,9 +27,9 @@ spring:
           predicates:
             - Path=/payment/lb/**         # 断言，路径相匹配的进行路由
             # - Before=2022-12-30T20:07:48.734+08:00[Asia/Shanghai] # 断言，路径相匹配的进行路由
-            - Between=2022-12-30T20:07:48.734+08:00[Asia/Shanghai], 2022-12-31T20:07:48.734+08:00[Asia/Shanghai]
-            - Header=X-Request-Id, \d+  # 请求头要有X-Request-Id属性并且值为整数的正则表达式
-            - Query=clarity, \d+
+            # - Between=2022-12-30T20:07:48.734+08:00[Asia/Shanghai], 2022-12-31T20:07:48.734+08:00[Asia/Shanghai]
+            # - Header=X-Request-Id, \d+  # 请求头要有X-Request-Id属性并且值为整数的正则表达式
+            # - Query=clarity, \d+
 
 #        - id: payment_routh3 #payment_route    #路由的ID，没有固定规则但要求唯一，建议配合服务名
 #          uri: http://localhost:8001          #匹配后提供服务的路由地址
