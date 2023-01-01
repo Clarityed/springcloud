@@ -8,15 +8,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * 控制器
+ * 控制层
  *
  * @author: clarity
- * @date: 2023年01月01日 12:57
+ * @date: 2023年01月01日 16:18
  */
 
 @RestController
-@Slf4j
 @RefreshScope
+@Slf4j
 @RequestMapping("/config")
 public class ConfigClientController {
 
