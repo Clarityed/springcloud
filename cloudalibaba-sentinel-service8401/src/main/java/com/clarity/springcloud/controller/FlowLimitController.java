@@ -19,6 +19,12 @@ public class FlowLimitController {
 
     @GetMapping("/testA")
     public String testA() {
+        // 测试限流：线程数
+/*        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }*/
         log.info("✔");
         return "------testA";
     }
