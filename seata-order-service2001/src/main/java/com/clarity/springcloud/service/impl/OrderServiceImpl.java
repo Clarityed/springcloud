@@ -5,6 +5,7 @@ import com.clarity.springcloud.domain.Order;
 import com.clarity.springcloud.service.AccountService;
 import com.clarity.springcloud.service.OrderService;
 import com.clarity.springcloud.service.StorageService;
+import io.seata.spring.annotation.GlobalTransactional;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -36,6 +37,7 @@ public class OrderServiceImpl implements OrderService {
      * 下订单 -> 减库存 -> 减余额 -> 改状态
      */
     @Override
+    @GlobalTransactional(name = "seata-create-order",rollbackFor = Exception.class)
     public void createOrder(Order order) {
         log.info("------->下单开始");
         // 1. 本地创建订单
