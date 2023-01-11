@@ -4,6 +4,7 @@ import com.clarity.springcloud.domian.CommonResult;
 import com.clarity.springcloud.service.StorageService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
@@ -23,7 +24,7 @@ public class StorageController {
     private StorageService storageService;
 
     @PostMapping("/decreaseProductStorage")
-    public CommonResult decreaseProductStorage(Long productId, Integer count) {
+    public CommonResult decreaseProductStorage(@RequestParam("productId") Long productId, @RequestParam("count") Integer count) {
         storageService.decreaseProductStorage(productId, count);
         return new CommonResult(200, "扣减库存成功！！！");
     }
