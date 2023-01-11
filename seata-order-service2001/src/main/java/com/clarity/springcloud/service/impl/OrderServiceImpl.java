@@ -50,7 +50,7 @@ public class OrderServiceImpl implements OrderService {
         log.info("-------> order-service 中扣减余额结束");
         log.info("-------> order-service 中修改订单状态开始");
         // 4. 修改订单状态，本地完成
-        orderDao.updateOrderState(order.getUserId(), order.getStatus());
+        orderDao.updateOrderState(order.getUserId(), 0);
         log.info("-------> order-service 中修改订单状态结束");
         log.info("------->下单结束");
     }
