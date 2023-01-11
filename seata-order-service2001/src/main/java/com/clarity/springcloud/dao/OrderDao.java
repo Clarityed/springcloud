@@ -23,7 +23,7 @@ public interface OrderDao {
     /**
      * 更新用户订单状态为已完成
      * @param userId 用户 id
-     * @param state 订单状态
+     * @param status 订单状态
      */
-    void updateOrderState(@Param("userId") Long userId, @Param("state") Integer state);
+    void updateOrderStatus(@Param("userId") Long userId, @Param("status") Integer status);
 }
